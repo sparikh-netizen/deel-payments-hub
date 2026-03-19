@@ -24,7 +24,7 @@ export const INVOICES = [
     status: 'on_hold',
     paymentMethod: 'Bank Transfer',
     workerCount: 14,
-    group: 'action',
+    group: 'progress',
   },
   {
     id: 'inv-003',

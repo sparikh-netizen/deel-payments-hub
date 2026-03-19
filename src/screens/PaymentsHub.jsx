@@ -30,6 +30,10 @@ export default function PaymentsHub({ invoices, onSelect }) {
     items: invoices.filter((inv) => inv.group === g.key),
   }))
 
+  const scrollToSection = (key) => {
+    document.getElementById(`section-${key}`)?.scrollIntoView({ behavior: 'smooth' })
+  }
+
   return (
     <div className="flex-1 p-8">
       {/* Header */}
@@ -46,7 +50,7 @@ export default function PaymentsHub({ invoices, onSelect }) {
       {/* Summary row */}
       <div className="grid grid-cols-3 gap-4 mb-8">
         {grouped.map((g) => (
-          <div key={g.key} className={`bg-white rounded-xl shadow-card px-4 py-3.5 border-t-2 ${g.borderColor}`}>
+          <div key={g.key} onClick={() => scrollToSection(g.key)} className={`bg-white rounded-xl shadow-card hover:shadow-card-hover cursor-pointer px-4 py-3.5 border-t-2 transition-shadow ${g.borderColor}`}>
             <p className={`text-xs font-semibold uppercase tracking-wide ${g.textColor}`}>{g.label}</p>
             <p className="text-2xl font-bold text-deel-text mt-1">{g.items.length}</p>
             <p className="text-xs text-deel-muted mt-0.5">invoice{g.items.length !== 1 ? 's' : ''}</p>
@@ -57,7 +61,7 @@ export default function PaymentsHub({ invoices, onSelect }) {
       {/* Invoice groups */}
       <div className="space-y-7">
         {grouped.map((g) => (
-          <div key={g.key}>
+          <div key={g.key} id={`section-${g.key}`}>
             <div className="flex items-center gap-2.5 mb-3">
               <h2 className={`text-sm font-semibold uppercase tracking-wider ${g.textColor}`}>{g.label}</h2>
               {g.key === 'action' && g.items.length > 0 && (
