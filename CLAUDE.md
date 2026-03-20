@@ -17,6 +17,10 @@ This project is part of Shivam's interview process at Deel for the **PM, Client 
 
 **Format:** 60 min, discussion-style, no strict presentation length. Figma/diagrams/docs all fine. Clarity of thinking > visual polish.
 
+**Deliverables:**
+- Written case study response → `payroll_funding_case_study.md` (complete)
+- Coded prototype → `https://deel-payments-hub.vercel.app` (complete)
+
 ---
 
 ## Case Study Brief (from PDF: Client UX PM Case Study)
