@@ -1,55 +1,33 @@
 const TIERS = [
-  {
-    tier: 'Tier 1',
-    label: 'New',
-    criteria: 'Under 3 months or first 3 payrolls',
-    policy: 'No advance',
-    color: 'bg-red-50 border-red-200',
-    badge: 'bg-red-100 text-red-700',
-  },
-  {
-    tier: 'Tier 2',
-    label: 'Established',
-    criteria: '3–12 months, clean history',
-    policy: 'Up to 1 day, in-transit funds only',
-    color: 'bg-yellow-50 border-yellow-200',
-    badge: 'bg-yellow-100 text-yellow-700',
-  },
-  {
-    tier: 'Tier 3',
-    label: 'Trusted',
-    criteria: '12+ months, no returns',
-    policy: 'Up to 2 days, submitted funds',
-    color: 'bg-green-50 border-green-200',
-    badge: 'bg-green-100 text-green-700',
-  },
-  {
-    tier: 'Tier 4',
-    label: 'Enterprise',
-    criteria: 'Contracted SLA',
-    policy: 'Terms per contract',
-    color: 'bg-deel-purple-dim border-deel-purple/20',
-    badge: 'bg-deel-purple-dim text-deel-purple',
-  },
+  { tier: 'Tier 1 — New',        criteria: 'Under 3 months or first 3 payrolls', policy: 'No advance' },
+  { tier: 'Tier 2 — Established',criteria: '3–12 months, clean payment history',  policy: 'Up to 1 day advance; in-transit funds only' },
+  { tier: 'Tier 3 — Trusted',    criteria: '12+ months, no returns or failures',  policy: 'Up to 2 days advance; submitted funds' },
+  { tier: 'Tier 4 — Enterprise', criteria: 'Contracted SLA',                       policy: 'Terms defined per contract' },
 ]
 
 export default function RiskTiers() {
   return (
-    <div>
-      <div className="grid md:grid-cols-4 gap-3 mb-4">
-        {TIERS.map(t => (
-          <div key={t.tier} className={`p-4 rounded-xl border ${t.color}`}>
-            <div className="flex items-center justify-between mb-2">
-              <span className={`text-xs font-bold px-2 py-0.5 rounded-full ${t.badge}`}>{t.tier}</span>
-            </div>
-            <p className="text-sm font-semibold mb-1">{t.label}</p>
-            <p className="text-xs text-deel-muted mb-3 leading-relaxed">{t.criteria}</p>
-            <p className="text-xs font-medium text-deel-text">{t.policy}</p>
-          </div>
-        ))}
-      </div>
-      <p className="text-xs text-deel-muted">
-        Tiers reviewed quarterly. Immediate downgrade on failed payment or return.
+    <div style={{ marginTop: 10, overflowX: 'auto' }}>
+      <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
+        <thead>
+          <tr style={{ background: '#F9FAFB' }}>
+            <th style={{ padding: '8px 12px', border: '1px solid #E5E7EB', textAlign: 'left', fontWeight: 600, color: '#111' }}>Tier</th>
+            <th style={{ padding: '8px 12px', border: '1px solid #E5E7EB', textAlign: 'left', fontWeight: 600, color: '#111' }}>Criteria</th>
+            <th style={{ padding: '8px 12px', border: '1px solid #E5E7EB', textAlign: 'left', fontWeight: 600, color: '#111' }}>Advance policy</th>
+          </tr>
+        </thead>
+        <tbody>
+          {TIERS.map(row => (
+            <tr key={row.tier}>
+              <td style={{ padding: '8px 12px', border: '1px solid #E5E7EB', color: '#111', whiteSpace: 'nowrap' }}>{row.tier}</td>
+              <td style={{ padding: '8px 12px', border: '1px solid #E5E7EB', color: '#374151' }}>{row.criteria}</td>
+              <td style={{ padding: '8px 12px', border: '1px solid #E5E7EB', color: '#374151' }}>{row.policy}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p style={{ fontSize: 13, color: '#6B7280', marginTop: 8, lineHeight: 1.6 }}>
+        Tiers reviewed quarterly. Immediate downgrade on any failed payment or return.
       </p>
     </div>
   )

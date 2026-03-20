@@ -5,8 +5,8 @@ export default {
     extend: {
       colors: {
         deel: {
-          purple:          '#6C5CE7',
-          'purple-light':  '#8B7CF6',
+          purple:          '#6E3FF3',
+          'purple-light':  '#8B63F7',
           'purple-dim':    '#F0EEFF',
           navy:            '#0F1629',
           'nav-bg':        '#1A1F36',
