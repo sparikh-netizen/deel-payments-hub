@@ -1,5 +1,72 @@
 # Deel Payments Hub — Prototype
 
+## Interview Context
+This project is part of Shivam's interview process at Deel for the **PM, Client Payments** role.
+
+**Process so far:**
+- Completed an initial call with Eithan (positive feedback)
+- Next stage: Product Exercise — 60-minute live presentation with **Slavic** (hiring manager)
+- Submit assignment at: https://you.ashbyhq.com/Deel/assignment/fb0c54a9-ce9c-4778-a009-edb421bb0399
+- Then schedule the live presentation via the link in the email
+
+**What the panel cares about:**
+1. How you design system states that reflect real money movement
+2. How you reduce financial risk while preserving UX clarity
+3. How you think about funding timelines and payout risk
+4. How you communicate complex financial flows simply
+
+**Format:** 60 min, discussion-style, no strict presentation length. Figma/diagrams/docs all fine. Clarity of thinking > visual polish.
+
+---
+
+## Case Study Brief (from PDF: Client UX PM Case Study)
+
+### Context
+PM for Client Payments at a global payroll platform. Clients fund payroll invoices before workers are paid via:
+1. **Autopay / Direct Debit** — platform debits linked bank account
+2. **Manual Bank Transfer** — client initiates from their bank
+
+System must: reflect invoice & payment state clearly, inform client when funds arrive and when workers are paid, manage financial risk.
+
+### Problem
+Payroll has multiple states: Invoice issuance → Client payment intent → Funds in transit → Funds settlement → Worker payout → Potential returns/failures.
+
+Collapsing states incorrectly (e.g. showing "Paid" too early) risks: financial exposure, advancing payroll without cleared funds, worker payout failures, client confusion, support burden.
+
+### What to Deliver
+
+**1. System Design**
+State model for: Invoice status / Payment instruction status / Funding/settlement status / Worker payout status.
+- Which states are user-facing vs internal only
+- How they transition
+- How they differ between direct debit and manual bank transfer
+
+**2. Funding Timelines & Invoice Issuance**
+- When invoices should be issued relative to payroll date
+- When payment should be due
+- How settlement timing impacts worker payout timing
+- What happens if funds are late
+- When to advance payroll vs when not to
+- How to limit exposure and what internal controls to build
+
+**3. UX Design — Payments Hub**
+- How invoices are grouped (Action Required / In Progress / Completed)
+- What status labels mean
+- When to use red / yellow / green
+- How worker payout timing is communicated
+- How partial payments are handled
+- Must include Figma sketch, diagram, or structured wireframe → **this prototype fulfils this requirement**
+
+### Additional Data
+- ACH settlement: 2–5 business days
+- Wire settlement: same-day (cutoff dependent)
+- Direct debit return window: up to several days
+- Payroll date is fixed and legally sensitive
+- Clients may be in multiple time zones
+- Clients may have multiple invoices open simultaneously
+
+---
+
 ## Purpose
 A clickable UI prototype built for Shivam's interview with Deel.
 Demonstrates a Payroll Funding Payments Hub — CFO-level product, not consumer.
