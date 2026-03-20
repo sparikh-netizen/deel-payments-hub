@@ -117,7 +117,7 @@ export default function StateFlowDiagram() {
           fontSize: 12,
           lineHeight: 1.7,
           color: '#374151',
-          background: '#F9FAFB',
+          background: '#fff',
           border: '1px solid #E5E7EB',
           borderRadius: 4,
           padding: '14px 16px',

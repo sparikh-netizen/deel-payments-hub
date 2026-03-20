@@ -20,7 +20,7 @@ export default function Landing() {
       <div style={{ maxWidth: 720, margin: '0 auto', padding: '48px 24px 96px' }}>
 
         {/* Title block */}
-        <div style={{ marginBottom: 48 }}>
+        <div style={{ marginBottom: 0 }}>
           <h1 style={{ fontSize: 20, fontWeight: 700, margin: '0 0 8px', color: '#111' }}>
             Payroll Funding Experience
           </h1>
@@ -234,26 +234,9 @@ export default function Landing() {
           <SubSection title="5.5  Prototype">
             <P>
               A clickable React prototype covering all six invoice states is available at the link
-              below. Screens: Hub default view, Failed (direct debit), In Transit (ACH with
-              timeline), On Hold, Partially Paid (progress bar), Workers Paid.
+              in the page header. Screens: Hub default view, Failed (direct debit), In Transit
+              (ACH with timeline), On Hold, Partially Paid (progress bar), Workers Paid.
             </P>
-            <div style={{ marginTop: 16 }}>
-              <Link
-                to="/prototype"
-                style={{
-                  display: 'inline-block',
-                  background: '#6E3FF3',
-                  color: '#fff',
-                  fontSize: 13,
-                  fontWeight: 600,
-                  padding: '8px 16px',
-                  borderRadius: 6,
-                  textDecoration: 'none',
-                }}
-              >
-                Open Payments Hub Prototype →
-              </Link>
-            </div>
           </SubSection>
         </Section>
 
@@ -266,7 +249,7 @@ export default function Landing() {
 
 function Section({ n, title, children }) {
   return (
-    <section style={{ marginBottom: 48 }}>
+    <section>
       <h2 style={{ fontSize: 16, fontWeight: 600, color: '#111', margin: '0 0 16px' }}>
         {n} {title}
       </h2>
@@ -295,7 +278,7 @@ function P({ children, mt, muted }) {
 }
 
 function HR() {
-  return <div style={{ borderTop: '1px solid #E5E7EB', marginBottom: 48 }} />
+  return <div style={{ borderTop: '1px solid #E5E7EB', margin: '48px 0' }} />
 }
 
 function Table({ headers, rows }) {
