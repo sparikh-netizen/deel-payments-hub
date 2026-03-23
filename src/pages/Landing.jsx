@@ -464,7 +464,7 @@ export default function Landing() {
             headers={['Assumption', "How I'd test it"]}
             rows={[
               [
-                'T-7 doesn't create unnecessary friction for established clients',
+                "T-7 doesn't create unnecessary friction for established clients",
                 'Track late payment rate by issuance timing. Tighten window for Tier 3+ if failure rates are similar at T-5.',
               ],
               [
